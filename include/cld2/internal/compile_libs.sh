@@ -27,7 +27,7 @@ if [ -n "${CPPFLAGS}" ]; then
   echo "CPPFLAGS=${CPPFLAGS}"
 fi
 
-g++ $CFLAGS $CPPFLAGS $CXXFLAGS -shared -fPIC \
+g++ $CFLAGS $CPPFLAGS $CXXFLAGS -shared -fPIC -dynamiclib \
   cldutil.cc cldutil_shared.cc compact_lang_det.cc compact_lang_det_hint_code.cc \
   compact_lang_det_impl.cc  debug.cc fixunicodevalue.cc \
   generated_entities.cc  generated_language.cc generated_ulscript.cc  \
@@ -39,7 +39,7 @@ g++ $CFLAGS $CPPFLAGS $CXXFLAGS -shared -fPIC \
   cld2_generated_distinctoctachrome.cc  cld_generated_score_quad_octa_2.cc  \
   -o libcld2.dylib $LDFLAGS -Wl,-install_name,libcld2.dylib
 
-g++ $CFLAGS $CPPFLAGS $CXXFLAGS -shared -fPIC \
+g++ $CFLAGS $CPPFLAGS $CXXFLAGS -shared -fPIC -dynamiclib \
   cldutil.cc cldutil_shared.cc compact_lang_det.cc compact_lang_det_hint_code.cc \
   compact_lang_det_impl.cc  debug.cc fixunicodevalue.cc \
   generated_entities.cc  generated_language.cc generated_ulscript.cc  \
@@ -50,4 +50,3 @@ g++ $CFLAGS $CPPFLAGS $CXXFLAGS -shared -fPIC \
   cld2_generated_quad0122.cc cld2_generated_deltaocta0122.cc \
   cld2_generated_distinctocta0122.cc  cld_generated_score_quad_octa_0122.cc  \
   -o libcld2_full.dylib $LDFLAGS -Wl,-install_name,libcld2_full.dylib
-

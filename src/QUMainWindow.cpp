@@ -930,7 +930,6 @@ void QUMainWindow::on_pushButton_BrowseSubtitles_clicked()
 		
 		float GAP = 0;
 		bool GAPset = false;
-		int prevendbeat = 0;
 		
 		for(const auto& substring: sub) {
 			QString line = QString::fromStdString(substring->getText()).remove("♪").trimmed();
@@ -2086,7 +2085,7 @@ QString QUMainWindow::syllabifyLyrics(QString lyrics, QString language)
 QString QUMainWindow::getResourcesPath() {
 	#if defined(Q_OS_WIN)
 		return QApplication::applicationDirPath() + "/";
-	#elif defined(Q_OS_OSX)
+	#elif defined(Q_OS_MACOS)
 		return QApplication::applicationDirPath() + "/../Resources/";
 	#elif defined(Q_OS_LINUX)
 		return QApplication::applicationDirPath() + "/../share/yourapplication/";
